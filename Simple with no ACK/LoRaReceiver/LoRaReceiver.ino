@@ -2,7 +2,7 @@
 #include <LoRa.h>
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   while (!Serial);
 
   Serial.println("LoRa Receiver");
@@ -12,6 +12,9 @@ void setup() {
     while (1);
   }
 //    LoRa.setSyncWord(0xF3);
+LoRa.setTxPower(20);
+LoRa.setSpreadingFactor(12);
+
 }
 
 void loop() {
